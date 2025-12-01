@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Dashboard - EventConnect</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+  <div id="toast-root"></div>
+
+  <header class="header">
+    <div class="brand">
+      <img src="assets/logo.png" alt="EventConnect Logo" class="logo" />
+      <h1>Dashboard</h1>
+    </div>
+    <div class="header-actions">
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+    </div>
+  </header>
+
+  <main class="container dashboard-grid">
+    <section class="card">
+      <h3>Your Created Events</h3>
+      <div id="createdEventsList"></div>
+    </section>
+
+    <section class="card">
+      <h3>Favorites</h3>
+      <div id="dashboardFavorites"></div>
+    </section>
+
+    <section class="card">
+      <h3>Last Viewed</h3>
+      <div id="lastViewed"></div>
+    </section>
+
+    <section class="card">
+      <h3>Your Reviews</h3>
+      <div id="yourReviews"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> EventConnect</p>
+  </footer>
+
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    App.loadDashboard();
+  </script>
+</body>
+</html>

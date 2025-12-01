@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Login - EventConnect</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+</head>
+<body>
+  <div id="toast-root"></div>
+
+  <header class="header">
+    <div class="brand">
+      <img src="assets/logo.png" alt="EventConnect Logo" class="logo" />
+      <h1>Login</h1>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="loginForm" class="card form-card">
+      <label>Username <input id="username" type="text" required/></label>
+      <label>Password <input id="password" type="password" required/></label>
+      <div class="form-actions">
+        <button type="submit" class="primary">Sign in</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> EventConnect</p>
+  </footer>
+
+  <script src="js/auth.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

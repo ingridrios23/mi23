@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Event Details - EventConnect</title>
+  <link rel="stylesheet" href="styles/main.css"/>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="toast-root"></div>
+
+  <header class="header">
+    <div class="brand">
+      <img src="assets/logo.png" alt="EventConnect Logo" class="logo" />
+      <h1>Event Details</h1>
+    </div>
+    <div class="header-actions">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <article id="eventDetail" class="detail"></article>
+
+    <section id="map" class="map"></section>
+
+    <section id="reviews" class="card">
+      <h3>Ratings & Reviews</h3>
+      <div id="ratingForm">
+        <label>Rate this event:
+          <select id="ratingSelect">
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Very good</option>
+            <option value="3">3 - Good</option>
+            <option value="2">2 - Fair</option>
+            <option value="1">1 - Poor</option>
+          </select>
+        </label>
+        <label>Comment:
+          <textarea id="ratingComment" rows="3" placeholder="Share your experience..."></textarea>
+        </label>
+        <div class="form-actions">
+          <button id="submitRating" class="primary">Submit Review</button>
+        </div>
+      </div>
+
+      <div id="reviewsList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> EventConnect</p>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    App.loadEventDetail();
+  </script>
+</body>
+</html>
